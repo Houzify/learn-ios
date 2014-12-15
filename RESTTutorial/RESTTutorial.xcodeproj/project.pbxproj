@@ -15,6 +15,7 @@
 		7460ED0F1A3980520039EB98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7460ED0E1A3980520039EB98 /* Images.xcassets */; };
 		7460ED121A3980520039EB98 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7460ED101A3980520039EB98 /* LaunchScreen.xib */; };
 		7460ED1E1A3980520039EB98 /* RESTTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460ED1D1A3980520039EB98 /* RESTTutorialTests.m */; };
+		7460ED291A3993070039EB98 /* Gist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460ED281A3993070039EB98 /* Gist.m */; };
 		85DD02C2A67A9BE3090770FE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDA098930F50D1E73DB3466 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		7460ED171A3980520039EB98 /* RESTTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RESTTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7460ED1C1A3980520039EB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7460ED1D1A3980520039EB98 /* RESTTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESTTutorialTests.m; sourceTree = "<group>"; };
+		7460ED271A3993070039EB98 /* Gist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gist.h; sourceTree = "<group>"; };
+		7460ED281A3993070039EB98 /* Gist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gist.m; sourceTree = "<group>"; };
 		BDDA098930F50D1E73DB3466 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FFEE3F91EC9B910B2ED2E2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +105,8 @@
 				7460ECFF1A3980520039EB98 /* AppDelegate.h */,
 				7460ED001A3980520039EB98 /* AppDelegate.m */,
 				7460ED051A3980520039EB98 /* MasterViewController.h */,
+				7460ED271A3993070039EB98 /* Gist.h */,
+				7460ED281A3993070039EB98 /* Gist.m */,
 				7460ED061A3980520039EB98 /* MasterViewController.m */,
 				7460ED0B1A3980520039EB98 /* Main.storyboard */,
 				7460ED0E1A3980520039EB98 /* Images.xcassets */,
@@ -281,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7460ED291A3993070039EB98 /* Gist.m in Sources */,
 				7460ED071A3980520039EB98 /* MasterViewController.m in Sources */,
 				7460ED011A3980520039EB98 /* AppDelegate.m in Sources */,
 				7460ECFE1A3980520039EB98 /* main.m in Sources */,

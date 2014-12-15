@@ -6,10 +6,15 @@
 //  Copyright (c) 2014 houzify. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
 #import "MasterViewController.h"
+#import "Gist.h"
+
+#define kFLICKR_CLIENTID @"02d1d0aff6f79047edf7dd48bde0ad67"
+#define kFLICKR_SECRET @"e39041e7fba2f75d"
 
 @interface MasterViewController ()
-
+@property (nonatomic, strong) NSArray *gists;
 @end
 
 @implementation MasterViewController
@@ -20,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self configureRestKit];
+    [self loadGists];
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -32,24 +41,42 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-        
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-        
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+#pragma mark - RestKit
+- (void)configureRestKit {
+    // initialize AFNetworking HTTPClient
+    NSURL *baseUrl = [NSURL URLWithString:@"https://api.github.com"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseUrl];
+    
+    // initialize RestKit mangaer
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
+    // setup object mappings
+    RKObjectMapping *gistMapping = [RKObjectMapping mappingForClass:[Gist class]];
+    [gistMapping addAttributeMappingsFromArray:@[@"description"]];
+    
+    // register the mappings with the object manager via a newly created ResponseDescriptor
+    RKResponseDescriptor *responseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:gistMapping
+                                                 method:RKRequestMethodAny
+                                            pathPattern:@"/gists/public"
+                                                keyPath:nil
+                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    [objectManager addResponseDescriptor:responseDescriptor];
 }
+
+- (void)loadGists {
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"/gists/public"
+                                           parameters:nil
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  _gists = mappingResult.array;
+                                                  [self.tableView reloadData];
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  NSLog(@"What do you mean 'you don't get the gist'?: %@", error);
+                                              }];
+    
+}
+
 
 #pragma mark - Table View
 
@@ -58,8 +85,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return _gists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -73,24 +99,9 @@
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-            
-        NSError *error = nil;
-        if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
-
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    Gist *gist = _gists[indexPath.row];
+    cell.textLabel.text = gist.description;
 }
 
 #pragma mark - Fetched results controller
