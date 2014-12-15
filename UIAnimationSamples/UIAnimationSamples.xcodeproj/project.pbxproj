@@ -14,6 +14,7 @@
 		7410F9D41A3F781F002CBE26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9D31A3F781F002CBE26 /* Images.xcassets */; };
 		7410F9D71A3F781F002CBE26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9D51A3F781F002CBE26 /* LaunchScreen.xib */; };
 		7410F9E31A3F781F002CBE26 /* UIAnimationSamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9E21A3F781F002CBE26 /* UIAnimationSamplesTests.m */; };
+		7410F9EE1A3F78DE002CBE26 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9ED1A3F78DE002CBE26 /* UIView+Animation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		7410F9DC1A3F781F002CBE26 /* UIAnimationSamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAnimationSamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7410F9E11A3F781F002CBE26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7410F9E21A3F781F002CBE26 /* UIAnimationSamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAnimationSamplesTests.m; sourceTree = "<group>"; };
+		7410F9EC1A3F78DE002CBE26 /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
+		7410F9ED1A3F78DE002CBE26 /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		7410F9C51A3F781F002CBE26 /* UIAnimationSamples */ = {
 			isa = PBXGroup;
 			children = (
+				7410F9EC1A3F78DE002CBE26 /* UIView+Animation.h */,
+				7410F9ED1A3F78DE002CBE26 /* UIView+Animation.m */,
 				7410F9CA1A3F781F002CBE26 /* AppDelegate.h */,
 				7410F9CB1A3F781F002CBE26 /* AppDelegate.m */,
 				7410F9CD1A3F781F002CBE26 /* ViewController.h */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7410F9CF1A3F781F002CBE26 /* ViewController.m in Sources */,
+				7410F9EE1A3F78DE002CBE26 /* UIView+Animation.m in Sources */,
 				7410F9CC1A3F781F002CBE26 /* AppDelegate.m in Sources */,
 				7410F9C91A3F781F002CBE26 /* main.m in Sources */,
 			);
