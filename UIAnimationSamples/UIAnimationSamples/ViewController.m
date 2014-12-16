@@ -60,6 +60,12 @@ static int curveValues[] = {
     
 }
 
+- (IBAction) btnHUD:(id)sender {
+    FakeHUD *theSubView = [FakeHUD newFakeHUD];
+    [self.view addSubviewWithFadeAnimation:theSubView duration:0.2
+                                    option:curveValues[selectedCurveIndex]];
+}
+
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

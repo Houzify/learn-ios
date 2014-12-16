@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+Animation.h"
+#import "FakeHUD.h"
 
 @interface ViewController : UIViewController {
     NSMutableArray *curveList;
@@ -20,6 +21,7 @@
 - (IBAction) btnMoveTo:(id)sender;
 - (IBAction) btnDownUnder:(id)sender;
 - (IBAction) btnZoom:(id)sender;
+- (IBAction) btnHUD:(id)sender;
 
 @end
 
