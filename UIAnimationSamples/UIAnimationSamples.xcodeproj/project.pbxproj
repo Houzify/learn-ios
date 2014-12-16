@@ -18,6 +18,9 @@
 		7410F9F01A3F9B0A002CBE26 /* arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9EF1A3F9B0A002CBE26 /* arrow1.png */; };
 		7410F9F31A3FA5E4002CBE26 /* AnimationCurvePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9F21A3FA5E4002CBE26 /* AnimationCurvePicker.m */; };
 		7410F9F51A3FA609002CBE26 /* AnimationCurvePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9F41A3FA609002CBE26 /* AnimationCurvePicker.xib */; };
+		7410F9F81A4010AD002CBE26 /* FakeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9F71A4010AD002CBE26 /* FakeHUD.m */; };
+		7410F9FA1A40118D002CBE26 /* FakeHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9F91A40118D002CBE26 /* FakeHUD.xib */; };
+		7410F9FC1A40121D002CBE26 /* FakeHUD.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9FB1A40121D002CBE26 /* FakeHUD.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,10 @@
 		7410F9F11A3FA5E4002CBE26 /* AnimationCurvePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCurvePicker.h; sourceTree = "<group>"; };
 		7410F9F21A3FA5E4002CBE26 /* AnimationCurvePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationCurvePicker.m; sourceTree = "<group>"; };
 		7410F9F41A3FA609002CBE26 /* AnimationCurvePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationCurvePicker.xib; sourceTree = "<group>"; };
+		7410F9F61A4010AD002CBE26 /* FakeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeHUD.h; sourceTree = "<group>"; };
+		7410F9F71A4010AD002CBE26 /* FakeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeHUD.m; sourceTree = "<group>"; };
+		7410F9F91A40118D002CBE26 /* FakeHUD.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FakeHUD.xib; sourceTree = "<group>"; };
+		7410F9FB1A40121D002CBE26 /* FakeHUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FakeHUD.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,9 @@
 				7410F9CB1A3F781F002CBE26 /* AppDelegate.m */,
 				7410F9CD1A3F781F002CBE26 /* ViewController.h */,
 				7410F9CE1A3F781F002CBE26 /* ViewController.m */,
+				7410F9F61A4010AD002CBE26 /* FakeHUD.h */,
+				7410F9F71A4010AD002CBE26 /* FakeHUD.m */,
+				7410F9F91A40118D002CBE26 /* FakeHUD.xib */,
 				7410F9F11A3FA5E4002CBE26 /* AnimationCurvePicker.h */,
 				7410F9F41A3FA609002CBE26 /* AnimationCurvePicker.xib */,
 				7410F9F21A3FA5E4002CBE26 /* AnimationCurvePicker.m */,
@@ -111,6 +121,7 @@
 		7410F9C61A3F781F002CBE26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7410F9FB1A40121D002CBE26 /* FakeHUD.png */,
 				7410F9EF1A3F9B0A002CBE26 /* arrow1.png */,
 				7410F9C71A3F781F002CBE26 /* Info.plist */,
 				7410F9C81A3F781F002CBE26 /* main.m */,
@@ -215,11 +226,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7410F9FA1A40118D002CBE26 /* FakeHUD.xib in Resources */,
 				7410F9D21A3F781F002CBE26 /* Main.storyboard in Resources */,
 				7410F9F01A3F9B0A002CBE26 /* arrow1.png in Resources */,
 				7410F9F51A3FA609002CBE26 /* AnimationCurvePicker.xib in Resources */,
 				7410F9D71A3F781F002CBE26 /* LaunchScreen.xib in Resources */,
 				7410F9D41A3F781F002CBE26 /* Images.xcassets in Resources */,
+				7410F9FC1A40121D002CBE26 /* FakeHUD.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +254,7 @@
 				7410F9EE1A3F78DE002CBE26 /* UIView+Animation.m in Sources */,
 				7410F9CC1A3F781F002CBE26 /* AppDelegate.m in Sources */,
 				7410F9F31A3FA5E4002CBE26 /* AnimationCurvePicker.m in Sources */,
+				7410F9F81A4010AD002CBE26 /* FakeHUD.m in Sources */,
 				7410F9C91A3F781F002CBE26 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
