@@ -75,6 +75,16 @@
                                     <action selector="btnZoom:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ss4-oO-aYE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzS-Jy-Qtt">
+                                <rect key="frame" x="137" y="460" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="HUD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnHUD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ty3-8E-1OE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.033493086695671082" green="0.0" blue="0.57204347848892212" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
