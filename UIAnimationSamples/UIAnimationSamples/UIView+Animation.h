@@ -10,4 +10,15 @@
 
 @interface UIView (Animation)
 
+- (void) moveTo:(CGPoint)destination duration:(float)secs option:(UIViewAnimationOptions)option;
+
+- (void) downUnder:(float)secs option:(UIViewAnimationOptions) option;
+
+- (void) addSubviewWithZoomInAnimation:(UIView *)view
+                              duration:(float)secs
+                                option:(UIViewAnimationOptions)option;
+
+- (void) removeWithZoomOutAnimation:(float)secs
+                             option:(UIViewAnimationOptions)option;
+
 @end

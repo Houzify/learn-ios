@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+Animation.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    NSMutableArray *curveList;
+    int selectedCurveIndex;
+    UIView *pickerView;
+}
 
+@property (nonatomic, weak) IBOutlet UIButton *movingButton;
+
+- (IBAction) btnMoveTo:(id)sender;
+- (IBAction) btnDownUnder:(id)sender;
+- (IBAction) btnZoom:(id)sender;
 
 @end
 

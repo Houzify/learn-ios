@@ -15,6 +15,9 @@
 		7410F9D71A3F781F002CBE26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9D51A3F781F002CBE26 /* LaunchScreen.xib */; };
 		7410F9E31A3F781F002CBE26 /* UIAnimationSamplesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9E21A3F781F002CBE26 /* UIAnimationSamplesTests.m */; };
 		7410F9EE1A3F78DE002CBE26 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9ED1A3F78DE002CBE26 /* UIView+Animation.m */; };
+		7410F9F01A3F9B0A002CBE26 /* arrow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9EF1A3F9B0A002CBE26 /* arrow1.png */; };
+		7410F9F31A3FA5E4002CBE26 /* AnimationCurvePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7410F9F21A3FA5E4002CBE26 /* AnimationCurvePicker.m */; };
+		7410F9F51A3FA609002CBE26 /* AnimationCurvePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7410F9F41A3FA609002CBE26 /* AnimationCurvePicker.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,10 @@
 		7410F9E21A3F781F002CBE26 /* UIAnimationSamplesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAnimationSamplesTests.m; sourceTree = "<group>"; };
 		7410F9EC1A3F78DE002CBE26 /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
 		7410F9ED1A3F78DE002CBE26 /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
+		7410F9EF1A3F9B0A002CBE26 /* arrow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow1.png; sourceTree = "<group>"; };
+		7410F9F11A3FA5E4002CBE26 /* AnimationCurvePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationCurvePicker.h; sourceTree = "<group>"; };
+		7410F9F21A3FA5E4002CBE26 /* AnimationCurvePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationCurvePicker.m; sourceTree = "<group>"; };
+		7410F9F41A3FA609002CBE26 /* AnimationCurvePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimationCurvePicker.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +97,9 @@
 				7410F9CB1A3F781F002CBE26 /* AppDelegate.m */,
 				7410F9CD1A3F781F002CBE26 /* ViewController.h */,
 				7410F9CE1A3F781F002CBE26 /* ViewController.m */,
+				7410F9F11A3FA5E4002CBE26 /* AnimationCurvePicker.h */,
+				7410F9F41A3FA609002CBE26 /* AnimationCurvePicker.xib */,
+				7410F9F21A3FA5E4002CBE26 /* AnimationCurvePicker.m */,
 				7410F9D01A3F781F002CBE26 /* Main.storyboard */,
 				7410F9D31A3F781F002CBE26 /* Images.xcassets */,
 				7410F9D51A3F781F002CBE26 /* LaunchScreen.xib */,
@@ -101,6 +111,7 @@
 		7410F9C61A3F781F002CBE26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7410F9EF1A3F9B0A002CBE26 /* arrow1.png */,
 				7410F9C71A3F781F002CBE26 /* Info.plist */,
 				7410F9C81A3F781F002CBE26 /* main.m */,
 			);
@@ -205,6 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7410F9D21A3F781F002CBE26 /* Main.storyboard in Resources */,
+				7410F9F01A3F9B0A002CBE26 /* arrow1.png in Resources */,
+				7410F9F51A3FA609002CBE26 /* AnimationCurvePicker.xib in Resources */,
 				7410F9D71A3F781F002CBE26 /* LaunchScreen.xib in Resources */,
 				7410F9D41A3F781F002CBE26 /* Images.xcassets in Resources */,
 			);
@@ -227,6 +240,7 @@
 				7410F9CF1A3F781F002CBE26 /* ViewController.m in Sources */,
 				7410F9EE1A3F78DE002CBE26 /* UIView+Animation.m in Sources */,
 				7410F9CC1A3F781F002CBE26 /* AppDelegate.m in Sources */,
+				7410F9F31A3FA5E4002CBE26 /* AnimationCurvePicker.m in Sources */,
 				7410F9C91A3F781F002CBE26 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
