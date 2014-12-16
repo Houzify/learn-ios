@@ -65,4 +65,103 @@
                      }];
 }
 
+- (void) addSubviewWithFadeAnimation:(UIView *)view duration:(float)secs option:(UIViewAnimationOptions)option  {
+    view.alpha = 0.0;
+    [self addSubview:view];
+    [UIView animateWithDuration:secs
+                          delay:0.0
+                        options:option
+                     animations:^{view.alpha = 1.0;}
+                     completion:nil];
+}
+
+- (void) addSubviewFromTopWithFadeAnimation:(UIView *)view duration:(float)secs
+                                     option:(UIViewAnimationOptions)option {
+    // Move the frame out of sight
+    view.alpha = 0;
+    view.frame = CGRectMake(0, self.bounds.origin.y-view.frame.size.height,
+                            view.frame.size.width, view.frame.size.height);
+    [self addSubview:view];
+    [UIView animateWithDuration:secs
+                          delay:0.0
+                        options:option
+                     animations:^{
+                         view.alpha = 1.0;
+                         view.frame = CGRectMake(0, 0,
+                                                 view.frame.size.width, view.frame.size.height);
+                     }
+                     completion:nil];
+}
+
+- (void) removeSubviewFromTopWithFadeAnimation:(UIView *)view duration:(float)secs
+                                        option:(UIViewAnimationOptions)option {
+    [UIView animateWithDuration:secs
+                          delay:0.0
+                        options:option
+                     animations:^{
+                         view.alpha = 0;
+                         view.frame = CGRectMake(0, self.bounds.origin.y-view.frame.size.height,
+                                                 view.frame.size.width, view.frame.size.height);
+                     }
+                     completion:nil];
+}
+
+
+- (void) addSubviewFromBottomWithFadeAnimation:(UIView *)view duration:(float)secs
+                                        option:(UIViewAnimationOptions)option {
+    view.alpha = 0;
+    view.frame = CGRectMake(0, self.bounds.size.height,
+                            view.frame.size.width, view.frame.size.height);
+    [self addSubview:view];
+    [UIView animateWithDuration:secs
+                          delay:0.0
+                        options:option
+                     animations:^{
+                         view.alpha = 1.0;
+                         view.frame = CGRectMake(0, self.bounds.size.height-view.frame.size.height,
+                                                 view.frame.size.width, view.frame.size.height);
+                     }
+                     completion:nil];
+}
+
+- (void) removeSubviewFromBottomWithFadeAnimation:(UIView *)view duration:(float)secs
+                                           option:(UIViewAnimationOptions)option {
+    [UIView animateWithDuration:secs
+                          delay:0.0
+                        options:option
+                     animations:^{
+                         view.alpha = 0;
+                         view.frame = CGRectMake(0, self.bounds.size.height,
+                                                 view.frame.size.width, view.frame.size.height);
+                     }
+                    completion:nil];
+}
+
+- (void) removeWithSinkAnimation:(int)steps {
+    NSTimer *timer;
+    if (steps > 0 && steps < 100)
+        self.tag = steps;
+    else
+        self.tag = 50;
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.05
+                                             target:self
+                                           selector:@selector(removeWithSinkAnimationRotateTimer:)
+                                           userInfo:nil
+                                            repeats:YES];
+}
+
+- (void) removeWithSinkAnimationRotateTimer:(NSTimer *)timer {
+    CGAffineTransform trans = CGAffineTransformRotate(
+        CGAffineTransformScale(self.transform, 0.9, 0.9),
+        -0.314);
+    self.transform = trans;
+    self.alpha = self.alpha * 0.98;
+    self.tag = self.tag - 1;
+    if (self.tag == 0) {
+        [timer invalidate];
+        [self removeFromSuperview];
+    }
+}
+
 @end
